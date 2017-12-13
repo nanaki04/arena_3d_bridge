@@ -25,7 +25,7 @@ defmodule Arena.Bridge.Translater do
 
   def translate_downstream(direction, spoils) do
     spoils
-    |> Enum.reduce(%{}, fn {key, charms, acc} ->
+    |> Enum.reduce(%{}, fn {key, charms}, acc ->
       Map.put(acc, key, Enum.map(charms, fn charm ->
         direction
         |> Kernel.to_string
