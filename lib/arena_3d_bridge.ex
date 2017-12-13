@@ -8,7 +8,7 @@ defmodule Arena3dBridge do
   footprints __MODULE__
 
   footprint :game_server, [
-    portal: {@node, Portal, :enter}
+    portal: {@node, Arena.Portal, :enter}
   ]
 
 end
