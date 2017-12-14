@@ -1,5 +1,6 @@
 defmodule Arena.Bridge.Agora do
 
+  use Arena.Bridge.Harmony
   import Arena.Bridge.Mark
 
   def joinevent(event) do

@@ -6,7 +6,7 @@ defmodule Arena.Bridge.Translater do
       state
       |> Map.put(:gifts, [direction, translate_upstream(direction, events)])
       |> next.()
-      |> (&%{&1 | result: translate_downstream(hd &1.gifts, &1.result)}).()
+      |> (&%{&1 | result: translate_downstream(hd(&1.gifts), &1.result)}).()
     end
   end
 

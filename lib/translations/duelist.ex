@@ -1,5 +1,6 @@
 defmodule Arena.Bridge.Duelist do
 
+  use Arena.Bridge.Harmony
   import Arena.Bridge.Mark
 
   def loginevent(event) do
