@@ -4,7 +4,9 @@ defmodule Arena3dBridge do
 
   @node :self
 
+  gatekeeper Arena.Bridge.Switch
   gatekeeper Arena.Bridge.Translater
+
   footprints __MODULE__
 
   footprint :game_server, [
