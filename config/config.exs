@@ -15,6 +15,8 @@ use Mix.Config
 # and access this configuration in your application as:
 #
 #     Application.get_env(:arena_3d_bridge, :key)
+  config :arena_3d_bridge,
+    other_side: :"arena_3d_game_server@127.0.0.1"
 #
 # You can also configure a 3rd-party app:
 #
