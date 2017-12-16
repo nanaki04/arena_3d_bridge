@@ -16,6 +16,10 @@ defmodule Arena.Bridge.Switch do
       |> Enum.chunk_by(&(filter_direction @direction[&1["EventType"]]))
       |> dispatch(state, next)
       |> Enum.map(&Task.await/1)
+      |> (fn s ->
+        IO.inspect(s)
+        s
+      end).()
       |> Enum.reduce(
         state,
         &(%{state | result: Map.merge(&2.result, &1.result, fn _, v1, v2 -> v1 ++ v2 end)})
