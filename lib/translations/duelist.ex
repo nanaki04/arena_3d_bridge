@@ -3,7 +3,7 @@ defmodule Arena.Bridge.Duelist do
   use Arena.Bridge.Harmony
   import Arena.Bridge.Mark
 
-  def loginevent(event) do
+  def login_event(event) do
     %{
       type: :login,
       name: event["PlayerId"],

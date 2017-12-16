@@ -3,7 +3,7 @@ defmodule Arena.Bridge.Agora do
   use Arena.Bridge.Harmony
   import Arena.Bridge.Mark
 
-  def joinevent(event) do
+  def join_event(event) do
     %{
       type: :participate,
       agora: event["Channel"],
@@ -21,7 +21,7 @@ defmodule Arena.Bridge.Agora do
     }
   end
 
-  def messageevent(event) do
+  def message_event(event) do
     %{
       type: :speak,
       agora: event["Channel"],

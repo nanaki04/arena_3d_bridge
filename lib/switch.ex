@@ -12,7 +12,7 @@ defmodule Arena.Bridge.Switch do
   def inspect(next) do
     fn %{gifts: [events]} = state ->
       events
-      |> Enum.sort_by(&(filter_direction @direction[&1["EventType"]] >= filter_direction @direction[&2["EventType"]]))
+      |> Enum.sort_by(&(filter_direction @direction[&1["EventType"]]))
       |> Enum.chunk_by(&(filter_direction @direction[&1["EventType"]]))
       |> dispatch(state, next)
       |> Enum.map(&Task.await/1)

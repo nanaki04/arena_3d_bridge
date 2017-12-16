@@ -1,6 +1,12 @@
 defmodule Arena.Bridge.Translater do
   use PathFinder.Gatekeeper
 
+  @functions %{
+    "LoginEvent": :login_event,
+    "JoinEvent": :join_event,
+    "MessageEvent": :message_event,
+  }
+
   def inspect(next) do
     fn %{gifts: [direction, events]} = state ->
       state
@@ -16,10 +22,7 @@ defmodule Arena.Bridge.Translater do
       |> Kernel.to_string
       |> String.capitalize
       |> (&Module.concat Arena.Bridge, &1).()
-      |> Kernel.apply(
-        (String.downcase(event["EventType"]) |> String.to_existing_atom),
-        [event]
-      )
+      |> Kernel.apply(@functions[event["EventType"]], [event])
     end)
   end
 
