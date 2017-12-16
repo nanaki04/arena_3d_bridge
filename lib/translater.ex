@@ -2,9 +2,9 @@ defmodule Arena.Bridge.Translater do
   use PathFinder.Gatekeeper
 
   @functions %{
-    "LoginEvent": :login_event,
-    "JoinEvent": :join_event,
-    "MessageEvent": :message_event,
+    "LoginEvent" => :login_event,
+    "JoinEvent" => :join_event,
+    "MessageEvent" => :message_event,
   }
 
   def inspect(next) do
